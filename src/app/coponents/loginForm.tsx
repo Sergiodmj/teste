@@ -17,8 +17,7 @@ export default function LoginForm(props: any) {
     if (response.status !== 200) return null;
 
     const user = await response.json();
-      console.log(user);
-
+    console.log(user);
     redirect("/page/home");
   }
 
