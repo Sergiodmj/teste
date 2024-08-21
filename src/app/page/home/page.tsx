@@ -1,9 +1,7 @@
-// import { status } from "../../constants";
+import { token } from "@/app/coponents/loginForm";
 
 export default function Home() {
-    
-    
-
-    return <h1>Home</h1>
-
+    // const token = user?.token;
+    console.log(typeof token);
+  return <h1>{token}</h1>;
 }
