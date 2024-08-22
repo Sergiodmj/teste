@@ -3,7 +3,7 @@
 import { userName } from "@/app/coponents/loginForm";
 
 export default function cadastro() {
-  console.log(userName);
+  // console.log(userName);
   return (
     <>
       Tela Cadastro

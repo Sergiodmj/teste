@@ -1,15 +1,23 @@
+'use client'
 import { redirect } from "next/navigation";
 
-export let status = null;
-export let token = null;
-export let userId = null;
-export let userName = null;
-export let userEmail = null;
+export let status: any;
+export let token: any;
+export let userId: any;
+export let userName: any;
+export let userEmail: any;
+
+export function Sair() {
+  status = null
+  token = null
+  userId = null
+  userName = null
+  userEmail = null;
+  // console.log(status, token, userId, userName, userEmail)
+}
 
 async function Login(form: FormData) {
-  "use server";
   const credenciais = Object.fromEntries(form);
-  //   console.log(credenciais)
   const response = await fetch("https://la.sitesdahora.com.br/api/login", {
     method: "POST",
     body: JSON.stringify({
@@ -28,10 +36,11 @@ async function Login(form: FormData) {
   userName = user.user.name;
   userEmail = user.user.email;
   // console.log(user)
+  // console.log(status, token, userId, userName, userEmail);
+
   redirect("/page/home");
 }
 
-// console.log(user)
 
 export default function LoginForm() {
   return (
