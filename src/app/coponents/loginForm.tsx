@@ -1,10 +1,10 @@
 import { redirect } from "next/navigation";
 
-export let status = null
-export let token = null
-export let userId = null
-export let userName = null
-export let userEmail = null
+export let status = null;
+export let token = null;
+export let userId = null;
+export let userName = null;
+export let userEmail = null;
 
 async function Login(form: FormData) {
   "use server";
@@ -22,9 +22,9 @@ async function Login(form: FormData) {
   if (response.status !== 200) return null;
 
   const user = await response.json();
-  status = user.status
-  token = user.token
-  userId = user.user.id
+  status = user.status;
+  token = user.token;
+  userId = user.user.id;
   userName = user.user.name;
   userEmail = user.user.email;
   // console.log(user)
